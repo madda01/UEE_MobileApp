@@ -25,19 +25,19 @@ public class AnimalAdapter extends ArrayAdapter<Animal> {
     List<Animal> animalList;
 
     //animal adapter constructor
-    public AnimalAdapter(Context context, int resource, List<Animal> animalList){
-        super(context,resource,animalList);
-        this.context=context;
-        this.resource=resource;
-        this.animalList=animalList;
+    public AnimalAdapter(Context context, int resource, List<Animal> animalList) {
+        super(context, resource, animalList);
+        this.context = context;
+        this.resource = resource;
+        this.animalList = animalList;
     }
 
     //get view method
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View row = inflater.inflate(resource,parent,false);
+        View row = inflater.inflate(resource, parent, false);
 
         TextView title = row.findViewById(R.id.tvtitle);
         TextView scientificName = row.findViewById(R.id.tvdecription);

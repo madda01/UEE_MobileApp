@@ -16,7 +16,7 @@ public class AnimalEach extends AppCompatActivity {
 
     //variable declaration
     Context context;
-    EditText name,sciname,desc;
+    EditText name, sciname, desc;
     AnimalDBHandler dbConnection;
     Animal animal;
 
@@ -26,9 +26,9 @@ public class AnimalEach extends AppCompatActivity {
         setContentView(R.layout.activity_animal_single_view_undergrad);
 
         //mapping the elements
-        name=findViewById(R.id.editTitle);
+        name = findViewById(R.id.editTitle);
         sciname = findViewById(R.id.addscientific);
-        desc=findViewById(R.id.adddesc);
+        desc = findViewById(R.id.adddesc);
 
         context = this;
         dbConnection = new AnimalDBHandler(context); //creating db connection
@@ -36,7 +36,7 @@ public class AnimalEach extends AppCompatActivity {
         Intent intent = getIntent();
         int i = intent.getIntExtra("id", 0);
 
-        animal=dbConnection.getSingleAnimal(i); //getting single animal
+        animal = dbConnection.getSingleAnimal(i); //getting single animal
 
         name.setText(animal.getName());
         sciname.setText(animal.getScientificName());

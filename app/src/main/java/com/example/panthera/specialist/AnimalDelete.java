@@ -33,22 +33,22 @@ public class AnimalDelete extends AppCompatActivity {
         setContentView(R.layout.activity_animal_delete);
 
         //mapping the elements
-        name=findViewById(R.id.deletetitle);
+        name = findViewById(R.id.deletetitle);
         sciname = findViewById(R.id.addscientific);
-        desc=findViewById(R.id.adddesc);
-        delete=findViewById(R.id.btndeleteanimal);
+        desc = findViewById(R.id.adddesc);
+        delete = findViewById(R.id.btndeleteanimal);
 
-        context=this;
+        context = this;
         sciname.setTypeface(null, Typeface.ITALIC);
 
-        animal =new Animal();
-        dbHandler=new AnimalDBHandler(context);
+        animal = new Animal();
+        dbHandler = new AnimalDBHandler(context);
 
 
-        final String id= getIntent().getStringExtra("idDel");
+        final String id = getIntent().getStringExtra("idDel");
 
         //getting animals to relevant animal id
-        animal=dbHandler.getSingleAnimal(Integer.parseInt(id));
+        animal = dbHandler.getSingleAnimal(Integer.parseInt(id));
 
         name.setText(animal.getName());
         sciname.setText(animal.getScientificName());

@@ -28,7 +28,7 @@ public class AnimalDBHandler extends SQLiteOpenHelper {
                 "CREATE TABLE " + DBMaster.Animals.TABLE_NAME1 + "(" +
                         DBMaster.Animals._ID + " INTEGER PRIMARY KEY," +
                         DBMaster.Animals.COLUMN_NAME_TITLE + " TEXT," +
-                        DBMaster.Animals.COLUMN_NAME_SCIENTIFIC + " REAL," +
+                        DBMaster.Animals.COLUMN_NAME_SCIENTIFIC + " TEXT," +
                         DBMaster.Animals.COLUMN_NAME_DESCRIPTION + " TEXT," +
                         DBMaster.Animals.COLUMN_NAME_IMAGE + " BLOB" +
                         ");";

@@ -17,7 +17,6 @@ import com.example.panthera.R;
 import com.example.panthera.database.AnimalDBHandler;
 import com.example.panthera.models.Animal;
 import com.example.panthera.specialist.AnimalAdapter;
-import com.example.panthera.specialist.AnimalDashboard;
 
 import java.util.List;
 
@@ -35,31 +34,31 @@ public class AnimalView extends AppCompatActivity {
         setContentView(R.layout.activity_animal_undergrad_dashboard);
 
         //getting the animal list
-        listView=findViewById(R.id.AnimalCusView);
-        context=this;
-        dbConnection= new AnimalDBHandler(context);
-        animals=dbConnection.getAllAnimal();
+        listView = findViewById(R.id.AnimalCusView);
+        context = this;
+        dbConnection = new AnimalDBHandler(context);
+        animals = dbConnection.getAllAnimal();
         logout = findViewById(R.id.btn);
-        animalAdapter= new AnimalAdapter(context,R.layout.activity_animal_each,animals);
+        animalAdapter = new AnimalAdapter(context, R.layout.activity_animal_each, animals);
         listView.setAdapter(animalAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             //alert box to view the animals
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Animal ani= animals.get(i);
-                String name= ani.getName();
-                String science= ani.getScientificName();
+                Animal ani = animals.get(i);
+                String name = ani.getName();
+                String science = ani.getScientificName();
 
-                AlertDialog.Builder builder= new AlertDialog.Builder(context);
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle(name);
                 builder.setMessage(science);
 
                 builder.setPositiveButton("View", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent= new Intent(context,AnimalEach.class);
-                        intent.putExtra("id",ani.getId());
+                        Intent intent = new Intent(context, AnimalEach.class);
+                        intent.putExtra("id", ani.getId());
                         startActivity(intent);
                     }
                 });

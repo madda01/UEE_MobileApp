@@ -24,7 +24,7 @@ import java.util.List;
 public class AnimalDashboard extends AppCompatActivity {
 
     //declaring the variables
-    private Button add,logout;
+    private Button add, logout;
     private ListView animalList;
     private TextView animalcount;
     Context context;
@@ -45,21 +45,21 @@ public class AnimalDashboard extends AppCompatActivity {
         animalcount = findViewById(R.id.animaldesc);
         animals = new ArrayList<>();
 
-       animals = db.getAllAnimal(); //getting all the animal lists
+        animals = db.getAllAnimal(); //getting all the animal lists
 
         //getting data
 
-        AnimalAdapter adapter = new AnimalAdapter(context,R.layout.activity_animal_each,animals);
+        AnimalAdapter adapter = new AnimalAdapter(context, R.layout.activity_animal_each, animals);
 
         animalList.setAdapter(adapter);
 
-       int countanimals = db.countAnimals(); //displaying the animal count in the list
-        animalcount.setText("You have "+countanimals+" animals");
+        int countanimals = db.countAnimals(); //displaying the animal count in the list
+        animalcount.setText("You have " + countanimals + " animals");
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //button to add new animal
-                startActivity(new Intent(AnimalDashboard.this,AnimalAdd.class));
+                startActivity(new Intent(AnimalDashboard.this, AnimalAdd.class));
             }
         });
 
@@ -82,8 +82,8 @@ public class AnimalDashboard extends AppCompatActivity {
                 builder.setNegativeButton("Delete Animal", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(context,AnimalDelete.class);
-                        intent.putExtra("idDel",String.valueOf(ani.getId()));
+                        Intent intent = new Intent(context, AnimalDelete.class);
+                        intent.putExtra("idDel", String.valueOf(ani.getId()));
                         startActivity(intent);
                         //this will redirect to deleteing the animal
                     }
@@ -91,8 +91,8 @@ public class AnimalDashboard extends AppCompatActivity {
                 builder.setNeutralButton("Update Animal", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(context,AnimalUpdate.class);
-                        intent.putExtra("id",String.valueOf(ani.getId()));
+                        Intent intent = new Intent(context, AnimalUpdate.class);
+                        intent.putExtra("id", String.valueOf(ani.getId()));
                         startActivity(intent);
                         //this will redirect to updating the animal
                     }
@@ -101,6 +101,7 @@ public class AnimalDashboard extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onBackPressed() {
         this.moveTaskToBack(true);

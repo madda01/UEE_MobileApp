@@ -37,8 +37,8 @@ public class AnimalUpdate extends AppCompatActivity {
         //mapping the elements
         name = findViewById(R.id.editTitle);
         sciname = findViewById(R.id.addscientific);
-        desc=findViewById(R.id.adddesc);
-        update=findViewById(R.id.btnupdateanimal);
+        desc = findViewById(R.id.adddesc);
+        update = findViewById(R.id.btnupdateanimal);
         sciname.setTypeface(null, Typeface.ITALIC);
 
         //get a single animal for the relevant animal id
@@ -56,15 +56,13 @@ public class AnimalUpdate extends AppCompatActivity {
                 //passing the newly edited data with the button
                 String decText = desc.getText().toString();
                 String Science = sciname.getText().toString();
-                String Title= name.getText().toString();
+                String Title = name.getText().toString();
 
-                if (Title.equals("")||Science.equals("")||decText.equals("")){
+                if (Title.equals("") || Science.equals("") || decText.equals("")) {
                     Toast.makeText(context, "Please enter all details", Toast.LENGTH_SHORT).show();
-                }
-
-                else{
+                } else {
                     //update the animal details
-                    Animal animal1 = new Animal(Integer.parseInt(id),Title,Science,decText);
+                    Animal animal1 = new Animal(Integer.parseInt(id), Title, Science, decText);
                     int state = dbHandler.updateSingleAnimal(animal1);
                     startActivity(new Intent(context, AnimalDashboard.class));
                 }
