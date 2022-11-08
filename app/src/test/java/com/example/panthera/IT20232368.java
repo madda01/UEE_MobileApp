@@ -36,11 +36,11 @@ public class IT20232368 {
         assertTrue(String.valueOf(true), nameValidate);
     }
 
-    @Test
-    public void NullDetails() {
-        isNull = testMethods.nullDetails("Elephant", "Loxodonta", "LoxodontaLoxodontaLoxodontaLoxodontaLoxodonta");
-        assertFalse(String.valueOf(false), isNull);
-    }
+//    @Test
+//    public void NullDetails() {
+//        isNull = testMethods.nullDetails("Elephant", "Loxodonta", "LoxodontaLoxodontaLoxodontaLoxodontaLoxodonta");
+//        assertFalse(String.valueOf(false), isNull);
+//    }
 
     @After
     public void clear() {

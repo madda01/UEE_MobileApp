@@ -1,5 +1,6 @@
 package com.example.panthera.undergrad;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,15 +21,16 @@ public class AnimalEach extends AppCompatActivity {
     AnimalDBHandler dbConnection;
     Animal animal;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_single_view_undergrad);
 
         //mapping the elements
-        name = findViewById(R.id.editTitle);
-        sciname = findViewById(R.id.addscientific);
-        desc = findViewById(R.id.adddesc);
+        name = findViewById(R.id.animalTitle);
+        sciname = findViewById(R.id.scientificName);
+        desc = findViewById(R.id.animalDesc);
 
         context = this;
         dbConnection = new AnimalDBHandler(context); //creating db connection

@@ -25,6 +25,7 @@ public class AnimalUpdate extends AppCompatActivity {
     private AnimalDBHandler dbHandler;
     Animal animal;
 
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

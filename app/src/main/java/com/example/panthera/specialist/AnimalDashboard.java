@@ -82,9 +82,8 @@ public class AnimalDashboard extends AppCompatActivity {
                 builder.setNegativeButton("Delete Animal", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(context, AnimalDelete.class);
-                        intent.putExtra("idDel", String.valueOf(ani.getId()));
-                        startActivity(intent);
+                        db.deleteAnimal(ani.getId());
+                        startActivity(new Intent(context, AnimalDashboard.class));
                         //this will redirect to deleteing the animal
                     }
                 });
